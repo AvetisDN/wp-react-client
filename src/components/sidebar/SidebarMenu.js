@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+//import MenuStore from '../../store/MenuStore';
 
 class SidebarMenu extends PureComponent {
     constructor(props) {
@@ -25,6 +26,18 @@ class SidebarMenu extends PureComponent {
             .catch( err => {
                 console.error(err);                
             })
+        /*MenuStore.prototype.getMainMenu()
+            .then(res => {
+                this.setState({
+                    items: res
+                })
+                console.log(this.state.items);
+                
+            })
+            .catch(err => {
+                console.error(err);
+                
+            }) */
     }
 
     render() {
@@ -40,7 +53,7 @@ class SidebarMenu extends PureComponent {
                                 case 'taxonomy': url = '/blog/' + item.slug;
                                                 break;
                                 
-                                default: url = '/'
+                                default: url = '/' + item.slug;
                             }
                             return (
                                 <li key={index}>

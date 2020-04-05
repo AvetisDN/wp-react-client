@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react'
+import Widgets from './widgets/Widgets'
+import BlogRoll from './blog/BlogRoll'
 
 class Home extends PureComponent {
     constructor(props) {
@@ -9,9 +11,15 @@ class Home extends PureComponent {
         }
     }
 
+    componentDidMount() {
+        window.initPageScripts()
+    }
+
     render() {
         return (
             <>
+                <BlogRoll/>
+                <Widgets/>
             </>
         )
     }

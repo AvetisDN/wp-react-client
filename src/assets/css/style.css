@@ -8290,11 +8290,11 @@ h1, h2, h3, h4, h5,
             -ms-transform: scaleX(1);
             -o-transform: scaleX(1);
             transform: scaleX(1); }
-      #colorlib-aside #colorlib-main-menu ul li.colorlib-active {
+      #colorlib-aside #colorlib-main-menu ul li a.active {
         font-weight: 600; }
-        #colorlib-aside #colorlib-main-menu ul li.colorlib-active a {
+        #colorlib-aside #colorlib-main-menu ul li a.active {
           color: #1eafed; }
-          #colorlib-aside #colorlib-main-menu ul li.colorlib-active a:after {
+          #colorlib-aside #colorlib-main-menu ul li a.active:after {
             visibility: visible;
             -webkit-transform: scaleX(1);
             -moz-transform: scaleX(1);
