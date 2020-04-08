@@ -23,13 +23,19 @@ export default class App extends Component {
           <Sidebar/>
           <div id="colorlib-main">
             <section className="ftco-section ftco-no-pt ftco-no-pb">
-              <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route exact path='/about' component={About}/>
-                <Route exact path='/contact' component={Contact}/>
-                <Route exact path='/blog/:slug' component={Blog}/>
-                <Route exact path='/post/:slug' component={Single}/>
-              </Switch>
+              <div className="container">
+                <div className="row d-flex">
+                  <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route exact path='/:page' component={Home}/>
+                    <Route exact path='/about' component={About}/>
+                    <Route exact path='/contact' component={Contact}/>
+                    <Route exact path='/blog/:slug' component={Blog}/>
+                    <Route exact path='/blog/:slug/:page' component={Blog}/>
+                    <Route exact path='/post/:slug' component={Single}/>
+                  </Switch>
+                </div>
+              </div>
             </section>
           </div>
         </div>

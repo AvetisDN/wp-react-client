@@ -11,7 +11,7 @@ class Widgets extends PureComponent {
 
     render() {
         return (
-            <div className="col-xl-4 sidebar ftco-animate bg-light pt-5">
+            <>
 				<div className="sidebar-box pt-md-4">
                     <form action="#" className="search-form">
                         <div className="form-group">
@@ -119,7 +119,7 @@ class Widgets extends PureComponent {
                     <h3 className="sidebar-heading">Paragraph</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut.</p>
                 </div>
-            </div>
+            </>
         )
     }
 }

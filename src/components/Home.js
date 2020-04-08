@@ -5,10 +5,6 @@ import BlogRoll from './blog/BlogRoll'
 class Home extends PureComponent {
     constructor(props) {
         super(props)
-
-        this.state = {
-            
-        }
     }
 
     componentDidMount() {
@@ -18,8 +14,13 @@ class Home extends PureComponent {
     render() {
         return (
             <>
-                <BlogRoll/>
-                <Widgets/>
+                <div className="col-xl-8 py-5 px-md-5">
+                    <BlogRoll page={this.props.match.params.page || 1} />
+                </div>
+
+                <div className="col-xl-4 sidebar ftco-animate bg-light pt-5">
+                    <Widgets/>
+                </div>
             </>
         )
     }
