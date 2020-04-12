@@ -24,27 +24,21 @@ class Pagination extends PureComponent {
         if(this.props.current > 1) {
             pagesArray.push(
                 (
-                    <li>
                         <NavLink to={`${this.props.slug}${this.props.current - 1}`}>&lt;</NavLink>
-                    </li>
                 )
             )
         }
         for(let i=1; i<=this.props.last; i++) {
             let pageData = (
-                            <li>
                                 <NavLink to={`${this.props.slug}${i}`}>
                                     {i}
                                 </NavLink>
-                            </li>
                             )
             if(i == this.props.current) {
                 pageData = (
-                    <li className="active">
                         <span>
                             {i}
                         </span>
-                    </li>
                     )
             }
             pagesArray.push(pageData)
@@ -53,9 +47,7 @@ class Pagination extends PureComponent {
         if(this.props.current < this.props.last) {
             pagesArray.push(
                 (
-                    <li>
-                        <NavLink to={`${this.props.slug}${this.props.current*1 + 1}`}>&gt;</NavLink>
-                    </li>
+                    <NavLink to={`${this.props.slug}${this.props.current*1 + 1}`}>&gt;</NavLink>
                 )
             )
         }
@@ -73,7 +65,11 @@ class Pagination extends PureComponent {
                         <ul>                            
                             {
                                 this.state.pagesArray.map( (p,i) => {
-                                    return p
+                                    return (
+                                        <li key={i}>
+                                            {p}
+                                        </li>
+                                    )
                                 })
                             }
                         </ul>

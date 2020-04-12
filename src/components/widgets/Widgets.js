@@ -1,24 +1,26 @@
 import React, { PureComponent } from 'react'
+import SearchForm from './SearchForm'
 
 class Widgets extends PureComponent {
     constructor(props) {
         super(props)
 
         this.state = {
-            
+            searchQuery: this.props.searchQuery
         }
+    }
+
+    componentDidUpdate() {
+        this.setState({
+            searchQuery: this.props.searchQuery
+        })
     }
 
     render() {
         return (
             <>
 				<div className="sidebar-box pt-md-4">
-                    <form action="#" className="search-form">
-                        <div className="form-group">
-                        <span className="icon icon-search"></span>
-                        <input type="text" className="form-control" placeholder="Type a keyword and hit enter" />
-                        </div>
-                    </form>
+                    <SearchForm searchQuery={this.state.searchQuery} />
                     </div>
                     <div className="sidebar-box ftco-animate">
                         <h3 className="sidebar-heading">Categories</h3>

@@ -23,6 +23,9 @@ class BlogRoll extends PureComponent {
             })
             this.fetchPosts()
         }
+        if(prevProps.searchQuery !== this.props.searchQuery) {
+            this.fetchPosts()
+        }
     }
 
     componentDidMount() {
@@ -30,7 +33,7 @@ class BlogRoll extends PureComponent {
     }
 
     fetchPosts() {
-        axios.get(`${process.env.REACT_APP_API_BASE}/posts?_embed&page=${this.state.page}`)
+        axios.get(`${process.env.REACT_APP_API_BASE}/posts?_embed&page=${this.state.page}&search=${this.props.searchQuery}`)
         .then(response => {
             this.setState({
                 posts: response.data,
